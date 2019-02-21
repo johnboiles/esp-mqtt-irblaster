@@ -49,7 +49,7 @@ Included in the firmware is a telnet debugging interface. To connect run `telnet
 
 I use the following Home Assistant automation to switch the inputs on my Vizio sound bar when my Alexa whole home audio group (named 'Everywhere') starts or stops playing.
 
-```
+```yaml
 - alias: Set soundbar input to aux/opt when the Alexa Everywhere group starts/stops
   trigger:
   - platform: state
