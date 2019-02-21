@@ -1,5 +1,5 @@
 # esp-mqtt-irblaster
-![TravisCI Build Status](https://travis-ci.org/johnboiles/esp-mqtt-irblaster.svg?branch=master)
+![TravisCI Build Status](https://travis-ci.com/johnboiles/esp-mqtt-irblaster.svg?branch=master)
 
 ESP8266 MQTT IR Blaster. Useful for hooking up IR gear (TVs, ACs, sound bars) to Home Assistant (and probably other things).
 
