@@ -44,3 +44,23 @@ mosquitto_sub -t 'irblaster/rx' -v -h $MQTT_SERVER -p 1883 -u $MQTT_USER -P $MQT
 ## Debugging
 
 Included in the firmware is a telnet debugging interface. To connect run `telnet irblaster.local`. With that you can log messages from code with the `DLOG` macro and also send commands back that the code can act on (see the `debugCallback` function).
+
+## Home Assistant Automation
+
+I use the following Home Assistant automation to switch the inputs on my Vizio sound bar when my Alexa whole home audio group (named 'Everywhere') starts or stops playing.
+
+```
+- alias: Set soundbar input to aux/opt when the Alexa Everywhere group starts/stops
+  trigger:
+  - platform: state
+    entity_id: media_player.everywhere
+    to: 'playing'
+  - platform: state
+    entity_id: media_player.everywhere
+    from: 'playing'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: 'irblaster/tx'
+      payload_template: "{\"type\":\"NEC\",\"code\":\"{% if trigger.to_state.state == 'playing' %}FF8D72{% else %}FF13EC{% endif %}\"}"
+```
