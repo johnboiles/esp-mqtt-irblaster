@@ -1,3 +1,5 @@
+*DEPRECATED. I've now moved to using [ESPHome](https://esphome.io/) for my IR blaster. See [here](https://github.com/johnboiles/homeassistant-config/tree/master/esphome) for my ESPHome configs (specifically look at [`ir_blaster.yaml`](https://github.com/johnboiles/homeassistant-config/blob/master/esphome/ir_blaster.yaml).*
+
 # esp-mqtt-irblaster
 ![TravisCI Build Status](https://travis-ci.com/johnboiles/esp-mqtt-irblaster.svg?branch=master)
 
